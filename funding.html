@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
+    <title>Densauluq</title>
+</head>
+
+<header>
+    <h1>Densauluq - Discounts and Appointments</h1>
+    <p>Please select whether you are eligible for special discounts or need to schedule a regular appointment.</p>
+</header>
+<nav>
+    <ul>
+        <li><a href="home_page.html">Return to home page</a></li>
+        <li><a href="registration.html">Log out</a></li>
+        <li><a href="personal_account.html">Personal Account</a></li>
+        <li><a href="analysis.html">View test results</a></li>
+        <li><a href="diseases.html">About diseases</a></li>
+        <li><a href="doctors.html">Doctors' database</a></li>
+        <li><a href="recommend.html">General recommendations</a></li>
+        <li><a href="funding.html">Financing</a></li>
+    </ul>
+</nav>
+
+<section>
+    <h2>Select Your Appointment Type</h2>
+
+    <form action="process-discount.html" method="get">
+        <label for="discount-options">Are you eligible for discounts?</label>
+        <select id="discount-options" name="discount-type">
+            <option value="none">No, I need a standard appointment</option>
+            <option value="disability">Yes, I am a person with disabilities</option>
+            <option value="pensioner">Yes, I am a senior citizen</option>
+            <option value="large-family">Yes, I have a large family (multiple children)</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Next">
+    </form>
+</section>
+
+<section>
+    <h3>Available Discounts</h3>
+    <ul>
+        <li><strong>People with disabilities:</strong> Receive free medical consultations and discounted treatments.</li>
+        <li><strong>Senior citizens:</strong> Receive discounts on selected services and priority appointment scheduling.</li>
+        <li><strong>Large families:</strong> Families with 3 or more children qualify for free basic medical services.</li>
+    </ul>
+</section>
+<section>
+    <h2>Payment Information</h2>
+    <form action="process-payment.html" method="post">
+        <fieldset>
+            <legend>Credit Card Details</legend>
+
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card-number" required>
+            <br><br>
+
+            <label for="card-name">Cardholder Name:</label>
+            <input type="text" id="card-name" name="card-name" required>
+            <br><br>
+
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+            <br><br>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            <br><br>
+
+            <label for="billing-address">Billing Address:</label>
+            <input type="text" id="billing-address" name="billing-address" required>
+            <br><br>
+
+            <input type="submit" value="Submit Payment">
+        </fieldset>
+    </form>
+</section>
+<footer>
+    <p> 2024 Densuluq. Liana Smatulla. </p>
+</footer>
+
+</body>
+</html>
