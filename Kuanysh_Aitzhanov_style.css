@@ -99,3 +99,20 @@ section a:hover {
     text-decoration: underline;
 }
 
+.your-information {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.your-information p {
+    flex: 1 1 200px;
+    margin: 0;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 4px 7px 3px darkslategray;
+}
+
+
