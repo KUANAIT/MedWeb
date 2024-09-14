@@ -85,4 +85,17 @@ iframe {
     margin: 0 auto 20px auto;
 }
 
+section h2 {
+    color: #00bfa5;
+    margin-bottom: 15px;
+}
+
+section a {
+    color: #00bfa5;
+    text-decoration: none;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
 
