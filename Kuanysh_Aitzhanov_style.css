@@ -48,9 +48,10 @@ nav ul li a:hover {
 
 section {
     padding: 20px;
-    background-color: #fff;
+    background-color: white;
     margin: 20px;
     border-radius: 10px;
+    box-shadow: 4px 7px 3px darkslategray;
 }
 
 hr {
@@ -83,6 +84,7 @@ footer {
 iframe {
     display: block;
     margin: 0 auto 20px auto;
+    box-shadow: 4px 7px 3px darkslategray;
 }
 
 section h2 {
