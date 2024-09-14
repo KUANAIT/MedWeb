@@ -4,9 +4,6 @@
     border: 2px solid black;
 }
 
-.background_color{
-    background-color: darkslategray;
-}
 
 @keyframes med {
     0%   {background-color:red; left:0px; top:0px;}
@@ -20,7 +17,6 @@
     width: 100px;
     height: 100px;
     position: relative;
-    background-color: red;
     animation-name: med;
     animation-duration: 4s;
 }
