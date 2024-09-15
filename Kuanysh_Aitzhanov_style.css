@@ -135,9 +135,9 @@ section a:hover {
     }
 }
 
-h1 {
-    animation: pulse 2s ease forwards;
-}
+/*h1 {*/
+/*    animation: pulse 2s ease forwards;*/
+/*}*/
 
 @keyframes slide {
     0% {

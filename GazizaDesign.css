@@ -5,12 +5,20 @@ input{
     border-radius: 20px;
     width: 450px;
     outline: medium;
-    font-family: "Al Nile";
+    /*font-family: "Al Nile";*/
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     transition: transform 0.3s ease-in-out;
 
+
+}
+input[type="submit"] {
+    background-color: #00bfa5;
+    color: white;
+}
+input[type="submit"]:hover {
+    background-color: #7f8c8d;
 }
 input:hover{
     transform: scale(1.04);
@@ -21,7 +29,8 @@ select{
     border: 2px solid darkslategray;
     border-radius: 10px;
     outline: medium;
-    font-family: "Al Nile";
+    /*font-family: "Al Nile";*/
+
 }
 
 textarea{
@@ -39,6 +48,7 @@ label{
     padding: 15px 20px;
     text-align: center;
     font-family: "Arial Rounded MT Bold";
+
 }
 
 .registration{
@@ -51,6 +61,7 @@ label{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+
 
 }
 
@@ -116,19 +127,19 @@ summary{
     border-block-end: #555555;
 }
 
-.pulsate {
-    animation: pulsate 1s infinite;
-}
+/*.pulsate {*/
+/*    animation: pulsate 1s infinite;*/
+/*}*/
 
-@keyframes pulsate {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.06);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+/*@keyframes pulsate {*/
+/*    0% {*/
+/*        transform: scale(1);*/
+/*    }*/
+/*    50% {*/
+/*        transform: scale(1.017);*/
+/*    }*/
+/*    100% {*/
+/*        transform: scale(1);*/
+/*    }*/
+/*}*/
 
