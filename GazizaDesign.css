@@ -127,19 +127,4 @@ summary{
     border-block-end: #555555;
 }
 
-/*.pulsate {*/
-/*    animation: pulsate 1s infinite;*/
-/*}*/
-
-/*@keyframes pulsate {*/
-/*    0% {*/
-/*        transform: scale(1);*/
-/*    }*/
-/*    50% {*/
-/*        transform: scale(1.017);*/
-/*    }*/
-/*    100% {*/
-/*        transform: scale(1);*/
-/*    }*/
-/*}*/
 

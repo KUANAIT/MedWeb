@@ -108,10 +108,10 @@ section td:last-child {
     font-weight: bold;
     text-align: center;
 }
-/*form style*/
-/*form label {*/
-/*    font-weight: bold;*/
-/*}*/
+
+form label {
+    font-weight: bold;
+}
 
 form input[type="text"],
 form select {
@@ -183,21 +183,6 @@ section a:hover {
 }
 
 
-/*.typing-demo {*/
-/*    font-family: Arial, Bold; !* Monospace font like a typewriter *!*/
-/*    white-space: nowrap;               !* Ensure text doesn't wrap *!*/
-/*    overflow: hidden;                  !* Hide the overflow text *!*/
-/*    width: 0;                          !* Start with no visible text *!*/
-/*    animation: typing 3.5s steps(40, end) forwards, blink-caret 0.75s step-end infinite;*/
-
-/*}*/
-
-/*!* Typing animation *!*/
-/*@keyframes typing {*/
-/*    from { width: 0; }*/
-/*    to { width: 25%; } !* this to match the desired text length *!*/
-/*}*/
-
 section ul {
     list-style: none;
     padding: 0;
@@ -205,8 +190,8 @@ section ul {
 section ul li {
     font-size: 0.9em;
     opacity: 0;
-    transform: scale(0.8); /* Start with a smaller size */
-    animation: scaleUp 0.5s forwards; /* Scale-up animation */
+    transform: scale(0.8);
+    animation: scaleUp 0.5s forwards;
 }
 
 section ul li:nth-child(1) { animation-delay: 0.2s; }
@@ -224,7 +209,7 @@ section ul li:nth-child(11) { animation-delay: 2.2s; }
 @keyframes scaleUp {
     to {
         opacity: 1;
-        transform: scale(1); /* Final size */
+        transform: scale(1);
     }
 }
 
