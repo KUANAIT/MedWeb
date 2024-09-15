@@ -1,7 +1,7 @@
 input{
     font-size: 30px;
     padding: 15px 20px;
-    border: 2px solid #007BFF;
+    border: 2px solid #cccccc;
     border-radius: 20px;
     width: 450px;
     outline: medium;
@@ -9,12 +9,16 @@ input{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
 
+}
+input:hover{
+    transform: scale(1.04);
 }
 select{
     font-size: 18px;
     padding: 15px 20px;
-    border: 2px solid #007BFF;
+    border: 2px solid darkslategray;
     border-radius: 10px;
     outline: medium;
     font-family: "Al Nile";
@@ -23,10 +27,11 @@ select{
 textarea{
     font-size: 18px;
     padding: 15px 20px;
-    border: 2px solid #007BFF;
+    border: 2px solid #cccccc;
     border-radius: 10px;
     outline: medium;
     font-family: "Al Nile";
+
 }
 
 label{
@@ -37,7 +42,7 @@ label{
 }
 
 .registration{
-    background-color: darkseagreen;
+    background-color: #eaf7e9;
     font-palette: black;
     border: 2px solid black;
     width: 600px;
@@ -110,3 +115,20 @@ summary{
     color: white;
     border-block-end: #555555;
 }
+
+.pulsate {
+    animation: pulsate 1s infinite;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.06);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
