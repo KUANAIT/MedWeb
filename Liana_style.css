@@ -120,6 +120,7 @@ form select {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 1px;
+
 }
 
 form input[type="submit"] {
@@ -130,7 +131,7 @@ form input[type="submit"] {
     font-size: 1.1em;
     cursor: pointer;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+
 }
 
 form input[type="submit"]:hover {
@@ -151,7 +152,7 @@ legend {
     color: darkslategray;
 }
 
-form a {
+fieldset form a {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
@@ -160,9 +161,63 @@ form a {
     padding: 5px 10px;
     font-size: 0.9em;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-form a:hover {
+fieldset form a:hover {
     background-color: #7f8c8d;
+    transform: scale(1.02);
+}
+
+
+/*.typing-demo {*/
+/*    font-family: 'Courier', monospace; !* Monospace font like a typewriter *!*/
+/*    white-space: nowrap;               !* Ensure text doesn't wrap *!*/
+/*    overflow: hidden;                  !* Hide the overflow text *!*/
+/*    border-right: 3px solid;           !* Create the blinking cursor effect *!*/
+/*    width: 0;                          !* Start with no visible text *!*/
+/*    animation: typing 3.5s steps(40, end) forwards, blink-caret 0.75s step-end infinite;*/
+
+/*}*/
+
+/*!* Typing animation *!*/
+/*@keyframes typing {*/
+/*    from { width: 0; }*/
+/*    to { width: 70%; } !* this to match the desired text length *!*/
+/*}*/
+
+/*!* Blinking cursor effect *!*/
+/*@keyframes blink-caret {*/
+/*    from, to { border-color: transparent; }*/
+/*    50% { border-color: black; }*/
+/*}*/
+
+
+article ul {
+    list-style: none;
+    padding: 0;
+}
+article ul li {
+    opacity: 0;
+    transform: scale(0.8); /* Start with a smaller size */
+    animation: scaleUp 0.5s forwards; /* Scale-up animation */
+}
+
+article ul li:nth-child(1) { animation-delay: 0.2s; }
+article ul li:nth-child(2) { animation-delay: 0.4s; }
+article ul li:nth-child(3) { animation-delay: 0.6s; }
+article ul li:nth-child(4) { animation-delay: 0.8s; }
+article ul li:nth-child(5) { animation-delay: 1s; }
+article ul li:nth-child(6) { animation-delay: 1.2s; }
+article ul li:nth-child(7) { animation-delay: 1.4s; }
+article ul li:nth-child(8) { animation-delay: 1.6s; }
+article ul li:nth-child(9) { animation-delay: 1.8s; }
+article ul li:nth-child(10) { animation-delay: 2.0s; }
+article ul li:nth-child(11) { animation-delay: 2.2s; }
+
+@keyframes scaleUp {
+    to {
+        opacity: 1;
+        transform: scale(1); /* Final size */
+    }
 }
