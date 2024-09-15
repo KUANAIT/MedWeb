@@ -42,7 +42,7 @@ label{
 
 }
 
-@keyframes med {
+@keyframes medical-rotate {
     from {
         transform: rotate(0deg);
     }
@@ -51,11 +51,11 @@ label{
     }
 }
 
-.tabletka {
+.image-animation {
     width: 100px;
     height: 100px;
     position: relative;
-    animation-name: med;
+    animation-name: medical-rotate;
     animation: med 4s linear infinite;
 }
 
@@ -83,7 +83,7 @@ summary{
     border-radius: 10px;
     margin: 0 auto;
 }
-#tabliza {
+#table-design {
     border: 1px solid darkslategrey;
     padding: 8px;
     background-color: #f2f2f2;
