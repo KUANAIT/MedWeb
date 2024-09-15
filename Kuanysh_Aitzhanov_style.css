@@ -156,7 +156,11 @@ blockquote {
     animation: slide 1s ease forwards;
 }
 
-@keyframes zoomIn {
+fieldset {
+    animation: slide 1s ease forwards;
+}
+
+@keyframes zoom {
     0% {
         transform: scale(0.5);
         opacity: 0;
@@ -168,7 +172,7 @@ blockquote {
 }
 
 .img {
-    animation: zoomIn 1s ease forwards;
+    animation: zoom 1s ease forwards;
 }
 
 @keyframes slideLeft {
