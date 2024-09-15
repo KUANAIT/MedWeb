@@ -1,10 +1,15 @@
 input{
-    font-size: 18px;
+    font-size: 30px;
     padding: 15px 20px;
     border: 2px solid #007BFF;
-    border-radius: 10px;
+    border-radius: 20px;
+    width: 450px;
     outline: medium;
     font-family: "Al Nile";
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
 }
 select{
     font-size: 18px;
@@ -35,10 +40,12 @@ label{
     background-color: darkseagreen;
     font-palette: black;
     border: 2px solid black;
-    width: 800px;
+    width: 600px;
     padding: 20px;
     border-radius: 10px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 
 }
 
@@ -93,7 +100,13 @@ summary{
     border-collapse: collapse;
     max-width: 800px;
     border-collapse: collapse;
+    width: 150%;
 }
 
-
+#thead-design-analysis {
+    background-color: darkslategrey;
+    text-align: center;
+    color: white;
+    border-block-end: #555555;
+}
 
