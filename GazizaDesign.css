@@ -62,9 +62,9 @@ label{
     width: 100px;
     height: 100px;
     position: relative;
-    animation-name: medical-rotate;
-    animation: med 4s linear infinite;
+    animation: medical-rotate 4s linear infinite;
 }
+
 
 img{
     max-width: 100%;
@@ -90,6 +90,7 @@ summary{
     border-radius: 10px;
     margin: 0 auto;
 }
+
 #table-design {
     border: 1px solid darkslategrey;
     padding: 8px;
@@ -109,4 +110,3 @@ summary{
     color: white;
     border-block-end: #555555;
 }
-
