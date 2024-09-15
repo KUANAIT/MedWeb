@@ -1,22 +1,99 @@
+input{
+    font-size: 18px;
+    padding: 15px 20px;
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    outline: medium;
+    font-family: "Al Nile";
+}
+select{
+    font-size: 18px;
+    padding: 15px 20px;
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    outline: medium;
+    font-family: "Al Nile";
+}
+
+textarea{
+    font-size: 18px;
+    padding: 15px 20px;
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    outline: medium;
+    font-family: "Al Nile";
+}
+
+label{
+    font-size: 18px;
+    padding: 15px 20px;
+    text-align: center;
+    font-family: "Arial Rounded MT Bold";
+}
+
 .registration{
-    background-color: mediumspringgreen;
-    color: white;
+    background-color: darkseagreen;
+    font-palette: black;
     border: 2px solid black;
+    width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+
 }
 
-
-@keyframes med {
-    0%   {background-color:red; left:0px; top:0px;}
-    25%  {background-color:yellow; left:200px; top:0px;}
-    50%  {background-color:blue; left:200px; top:200px;}
-    75%  {background-color:green; left:0px; top:200px;}
-    100% {background-color:red; left:0px; top:0px;}
+@keyframes medical-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.tabletka {
+.image-animation {
     width: 100px;
     height: 100px;
     position: relative;
-    animation-name: med;
-    animation-duration: 4s;
+    animation-name: medical-rotate;
+    animation: med 4s linear infinite;
 }
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    align-self: center;
+}
+
+details{
+    font-size: 15px;
+}
+summary{
+    font-size: 25px;
+}
+
+.analysis{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+#table-design {
+    border: 1px solid darkslategrey;
+    padding: 8px;
+    background-color: #f2f2f2;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-collapse: collapse;
+    max-width: 800px;
+    border-collapse: collapse;
+}
+
+
+
