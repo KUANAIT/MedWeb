@@ -67,3 +67,33 @@ img{
     align-self: center;
 }
 
+details{
+    font-size: 15px;
+}
+summary{
+    font-size: 25px;
+}
+
+.analysis{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+#tabliza {
+    border: 1px solid darkslategrey;
+    padding: 8px;
+    background-color: #f2f2f2;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-collapse: collapse;
+    max-width: 800px;
+    border-collapse: collapse;
+}
+
+
+
