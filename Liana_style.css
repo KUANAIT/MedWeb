@@ -78,15 +78,15 @@ th, td {
 }
 
 th {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 td {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 figcaption {
-    font-size: 12px;
+    font-size: 10px;
     color: #7f8c8d;
 }
 
@@ -95,33 +95,145 @@ tbody tr:nth-child(even) {
 }
 
 
-td img {
-    width: 100px;
-    height: 100px;
-    transition: transform 0.3s ease-in-out;
-}
-
-td img:hover {
-    transform: scale(1.2);
-}
-
 
 footer p{
     color: white;
 }
 
-@media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
+section ul li {
+    color: orange;
+}
 
-    table {
-        width: 95%;
-    }
+article h3{
+    color: #00bfa5;
+}
 
-    img {
-        width: 80px;
-        height: 80px;
-    }
+/* table design */
+section table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section th, section td {
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+section th {
+    background-color: #00bfa5;
+    color: white;
+}
+
+/* table effect*/
+section tr {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+section tr:hover {
+    background-color: #f0f8ff;
+    transform: scale(1.02);
+}
+
+/* image style*/
+section td img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+section td img:hover {
+}
+
+/* appointment button */
+ td a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: #00bfa5;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+ td a:hover {
+    background-color: #7f8c8d;
+}
+
+figcaption {
+    text-align: left;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* days higlight */
+section td:last-child {
+    background-color: #eaf7e9;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+
+form label {
+    font-weight: bold;
+}
+
+form input[type="text"],
+form select {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+}
+
+form input[type="submit"] {
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #00bfa5;
+}
+
+/* fieldset */
+fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: darkslategray;
+}
+ form a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: #00bfa5;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+form a:hover {
+    background-color: #7f8c8d;
 }
