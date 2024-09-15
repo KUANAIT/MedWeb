@@ -1,27 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: floralwhite;
-    color: darkslategray;
-    line-height: 1.6;
-}
-
-header {
-    background-color: #00bfa5;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-header h1 {
-    margin: 10px 0;
-}
-
-header p {
-    color: white;
-
-
-}
+/*article designs*/
 article {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -31,7 +8,7 @@ article {
 
 }
 
-p {
+article p {
     color: #555;
     font-size: 18px;
     margin-top: 20px;
@@ -48,7 +25,6 @@ article ul li {
     color: orange;
 }
 
-
 h3 {
     color: #555;
     font-size: 21px;
@@ -56,49 +32,6 @@ h3 {
     margin-bottom: 10px;
 }
 
-
-
-table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-thead {
-    background-color: #00bfa5;
-    color: white;
-}
-
-th, td {
-    padding: 15px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-th {
-    font-size: 18px;
-}
-
-td {
-    font-size: 16px;
-}
-
-figcaption {
-    font-size: 10px;
-    color: #7f8c8d;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-
-
-footer p{
-    color: white;
-}
 
 section ul li {
     color: orange;
@@ -110,7 +43,7 @@ article h3{
 
 /* table design */
 section table {
-    width: 100%;
+    width: 70%;
     margin: 20px 0;
     border-collapse: collapse;
     background-color: white;
@@ -128,7 +61,7 @@ section th {
     color: white;
 }
 
-/* table effect*/
+ /*table effect*/
 section tr {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -145,8 +78,6 @@ section td img {
     height: 100px;
 }
 
-section td img:hover {
-}
 
 /* appointment button */
  td a {
@@ -177,9 +108,6 @@ section td:last-child {
     font-weight: bold;
     text-align: center;
 }
-
-
-
 
 form label {
     font-weight: bold;
@@ -222,7 +150,8 @@ legend {
     font-weight: bold;
     color: darkslategray;
 }
- form a {
+
+form a {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
