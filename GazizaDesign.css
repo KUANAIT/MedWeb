@@ -10,9 +10,8 @@ input{
     margin-right: auto;
     text-align: center;
     transition: transform 0.3s ease-in-out;
-
-
 }
+
 input[type="submit"] {
     background-color: #00bfa5;
     color: white;
@@ -23,6 +22,12 @@ input[type="submit"]:hover {
 input:hover{
     transform: scale(1.04);
 }
+
+input [type="date"] {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 select{
     font-size: 18px;
     padding: 15px 20px;
@@ -92,9 +97,14 @@ img{
 
 details{
     font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 summary{
     font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .analysis{
