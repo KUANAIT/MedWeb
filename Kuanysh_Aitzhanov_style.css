@@ -107,11 +107,11 @@ nav ul li a:hover {
 /*    text-decoration: underline;*/
 /*}*/
 
-.your-information {
+/*.your-information {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-}
+}*/
 
 /*.your-information p {*/
 /*    margin: 0;*/
