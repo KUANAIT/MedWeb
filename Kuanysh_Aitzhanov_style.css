@@ -48,13 +48,13 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-section {
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 4px 7px 3px darkslategray;
-}
+/*section {*/
+/*    padding: 20px;*/
+/*    background-color: white;*/
+/*    margin: 20px;*/
+/*    border-radius: 10px;*/
+    /*box-shadow: 4px 7px 3px darkslategray;*/
+/*}*/
 
 /*hr {
     border: 0;
@@ -113,25 +113,25 @@ section a:hover {
     gap: 20px;
 }
 
-.your-information p {
-    margin: 0;
-    padding: 10px;
-    background-color: whitesmoke;
-    border-radius: 5px;
-    box-shadow: 4px 7px 3px darkslategray;
-}
+/*.your-information p {*/
+/*    margin: 0;*/
+/*    padding: 10px;*/
+/*    background-color: whitesmoke;*/
+/*    border-radius: 5px;*/
+/*    box-shadow: 4px 7px 3px darkslategray;*/
+/*}*/
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+/*@keyframes pulse {*/
+/*    0% {*/
+/*        transform: scale(1);*/
+/*    }*/
+/*    50% {*/
+/*        transform: scale(1.05);*/
+/*    }*/
+/*    100% {*/
+/*        transform: scale(1);*/
+/*    }*/
+/*}*/
 
 /*h1 {*/
 /*    animation: pulse 2s ease forwards;*/
@@ -158,6 +158,10 @@ blockquote {
 
 fieldset {
     animation: slide 1s ease forwards;
+}
+
+hr {
+    animation: slide 0.4s ease;
 }
 
 @keyframes zoom {
