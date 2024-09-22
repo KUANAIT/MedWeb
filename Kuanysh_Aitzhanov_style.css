@@ -1,44 +1,44 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: floralwhite;
-    color: darkslategray;
-    line-height: 1.6;
-}
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    background-color: floralwhite;*/
+/*    color: darkslategray;*/
+/*    line-height: 1.6;*/
+/*}*/
 
-header {
-    background-color: #00bfa5;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+/*header {*/
+/*    background-color: #00bfa5;*/
+/*    color: white;*/
+/*    padding: 20px;*/
+/*    text-align: center;*/
+/*}*/
 
-header img {
-    display: inline-block;
-    vertical-align: middle;
-}
+/*header img {*/
+/*    display: inline-block;*/
+/*    vertical-align: middle;*/
+/*}*/
 
-header h1 {
-    margin: 10px 0;
-}
+/*header h1 {*/
+/*    margin: 10px 0;*/
+/*}*/
 
-nav {
-    background-color: darkslategray;
-}
+/*nav {*/
+/*    background-color: darkslategray;*/
+/*}*/
 
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
+/*nav ul li {*/
+/*    display: inline;*/
+/*    margin-right: 20px;*/
+/*}*/
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-}
+/*nav ul li a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*    padding: 10px;*/
+/*}*/
 
 nav ul li a:hover {
     background-color: #00bfa5;
