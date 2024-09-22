@@ -27,59 +27,71 @@
 <br>
 <br>
 <div class="container">
-    <div class="row">
-        <div class="col-md-5">
-            <fieldset class="registration">
-                <legend><h1>Already in? Log in!</h1></legend>
-                <form action="personal_account.html" method="get" >
-                    <label>email</label><br>
-                    <input type="email" placeholder="johnwickofficial@gmail.com"><br>
-                    <label>password</label><br>
-                    <input type="password" placeholder="********"><br><br>
-                    <input type="submit" value="Log in" class="btn btn-primary mb-2">
-                </form>
-            </fieldset>
-            <br>
-            <br>
-            <br>
+    <div class="row justify-content-center my-5">
+        <div class="col-lg-5 col-md-6 mb-4">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h2 class="card-title text-center mb-4">Already a member? Log in!</h2>
+                    <form action="personal_account.html" method="get">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control form-control-lg" placeholder="johnwickofficial@gmail.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" class="form-control form-control-lg" placeholder="********" required>
+                        </div>
+                        <button type="submit" class="bg-dark btn btn-primary w-100 btn-lg">Log in</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="col-md-2">
-            <img src="img/redblue.png" class="image-animation">
-            <br>
-            <br>
-            <br>
+
+        <div class="col-lg-2 d-flex justify-content-center align-items-center mb-4">
+            <img src="img/redblue.png" class="image-animation" alt="Rotating logo">
         </div>
-        <div class="col-md-5">
-            <fieldset class="registration">
-                <legend font-size = "50px"; padding = "10px"; font-family = "Arial"; font-size><h1>First time? THEN SIGN IN</h1></legend>
-                <form action="personal_account.html" method="get">
-                    <label>First name:</label><br>
-                    <input type="text" placeholder = "John"><br>
-                    <label>Last name:</label><br>
-                    <input type="text" placeholder="Wick"><br>
-                    <label>E-mail:</label><br>
-                    <input type="email" placeholder="johnwickofficial@gmail.com"><br>
-                    <br>
-                    <label>Date of birth:</label><br>
-                    <input type="date"><br>
-                    <br>
-                    <label>Password:</label><br>
-                    <input type="password" placeholder="********"><br><br>
-                    <label>Approve password:</label><br>
-                    <input type="password" placeholder="********"><br><br>
-                    <input type="submit" value="Registration" class="btn btn-primary mb-2">
-                </form>
-            </fieldset>
-            <br>
-            <br>
-            <br>
+
+        <div class="col-lg-5 col-md-6 mb-4">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h2 class="card-title text-center mb-4">New here? Sign up!</h2>
+                    <form action="personal_account.html" method="get">
+                        <div class="mb-3">
+                            <label for="first-name" class="form-label">First Name</label>
+                            <input type="text" id="first-name" class="form-control form-control-lg" placeholder="John" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="last-name" class="form-label">Last Name</label>
+                            <input type="text" id="last-name" class="form-control form-control-lg" placeholder="Wick" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email-signup" class="form-label">E-mail</label>
+                            <input type="email" id="email-signup" class="form-control form-control-lg" placeholder="johnwickofficial@gmail.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="date" id="dob" class="form-control form-control-lg" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password-signup" class="form-label">Password</label>
+                            <input type="password" id="password-signup" class="form-control form-control-lg" placeholder="********" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="confirm-password" class="form-label">Confirm Password</label>
+                            <input type="password" id="confirm-password" class="form-control form-control-lg" placeholder="********" required>
+                        </div>
+                        <button type="submit" class="bg-dark btn btn-primary w-100 btn-lg">Register</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 <br>
 <br>
 <br>
-<footer>
+<footer class="bg-dark text-light text-center py-3 mt-auto">
     <p>2024 Densauluq. Gaziza Tanirbergen, Liana Smatulla, Kuanysh Aitzhanov.</p>
 </footer>
 </body>
