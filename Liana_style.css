@@ -48,6 +48,9 @@ section table {
     border-collapse: collapse;
     background-color: white;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 section th, section td {
