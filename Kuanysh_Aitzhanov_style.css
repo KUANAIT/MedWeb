@@ -193,3 +193,7 @@ nav {
     transform: translateX(-100%);
     animation: slideLeft 0.6s ease forwards;
 }
+
+h2 {
+    color:#19585a;
+}
