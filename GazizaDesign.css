@@ -65,6 +65,8 @@ label{
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
     text-align: center;
 
 
@@ -83,6 +85,7 @@ label{
     width: 100px;
     height: 100px;
     position: relative;
+    filter: opacity(0.5) drop-shadow(0 0 0 white);
     animation: medical-rotate 4s linear infinite;
 }
 
