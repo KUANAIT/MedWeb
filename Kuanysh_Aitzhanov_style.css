@@ -41,11 +41,11 @@
 /*}*/
 
 nav ul li a:hover {
-    background-color: #00bfa5;
+    background-color: #19585a;
     color: white;
     border-radius: 5px;
     transition: background-color 0.2s ease, transform 0.2s ease;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 section {
@@ -56,66 +56,64 @@ section {
     box-shadow: 4px 7px 3px darkslategray;
 }
 
-hr {
+/*hr {
     border: 0;
     height: 1px;
     background: white;
     margin: 40px 0;
-}
+}*/
 
-blockquote {
-    font-style: italic;
-    color: #555;
-    margin: 20px;
-    padding: 10px;
-    border-left: 5px solid #00bfa5;
-    background-color: white;
-}
+/*blockquote {*/
+/*    font-style: italic;*/
+/*    color: #555;*/
+/*    margin: 20px;*/
+/*    padding: 10px;*/
+/*    border-left: 5px solid #00bfa5;*/
+/*    background-color: white;*/
+/*}*/
 
-footer {
-    background-color: darkslategray;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+/*footer {*/
+/*    background-color: darkslategray;*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    padding: 10px 0;*/
+/*    position: relative;*/
+/*    bottom: 0;*/
+/*    width: 100%;*/
+/*}*/
 
 
-iframe {
-    display: block;
-    margin: 0 auto 20px auto;
-    box-shadow: 4px 7px 3px darkslategray;
-}
+/*iframe {*/
+/*    display: block;*/
+/*    margin: 0 auto 20px auto;*/
+/*    box-shadow: 4px 7px 3px darkslategray;*/
+/*}*/
 
-p.description {
-    font-weight: bold;
-}
+/*p.description {*/
+/*    font-weight: bold;*/
+/*}*/
 
-section h2 {
-    color: #00bfa5;
-    margin-bottom: 15px;
-}
+/*section h2 {*/
+/*    color: #00bfa5;*/
+/*    margin-bottom: 15px;*/
+/*}*/
 
-section a {
-    color: #00bfa5;
-    text-decoration: none;
-}
+/*section a {*/
+/*    color: #00bfa5;*/
+/*    text-decoration: none;*/
+/*}*/
 
 section a:hover {
     text-decoration: underline;
 }
 
 .your-information {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    justify-content: flex-start;
 }
 
 .your-information p {
-    flex: 1 1 200px;
     margin: 0;
     padding: 10px;
     background-color: whitesmoke;
