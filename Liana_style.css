@@ -8,39 +8,39 @@
 
 /*}*/
 
-article p {
-    font-family: "Times New Roman", Times, serif;
-    color: black;
-    font-size: 15px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
+/*article p {*/
+/*    font-family: "Times New Roman", Times, serif;*/
+/*    color: black;*/
+/*    font-size: 15px;*/
+/*    margin-top: 20px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
 
 /*article ul {*/
 /*    list-style-type: disc;*/
 /*    padding-left: 20px;*/
 /*}*/
 
-article ul li {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 18px;
-}
+/*article ul li {*/
+/*    font-family: "Times New Roman", Times, serif;*/
+/*    font-size: 18px;*/
+/*}*/
 
-h3 {
-    color: black;
-    font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
+/*h3 {*/
+/*    color: black;*/
+/*    font-size: 18px;*/
+/*    margin-top: 20px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
 
 /*article list*/
 /*article ul li {*/
 /*    color: orange;*/
 /*}*/
 
-article h3{
-    color:#19585a;
-}
+/*article h3{*/
+/*    color:#19585a;*/
+/*}*/
 
 /* table design */
 /*section table {*/
@@ -65,25 +65,25 @@ article h3{
 /*    color: white;*/
 /*}*/
 
- /*table effect*/
-section tr {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+/* !*table effect*!*/
+/*section tr {*/
+/*    transition: background-color 0.3s ease, transform 0.3s ease;*/
+/*}*/
 
-section tr:hover {
-    background-color: #f0f8ff;
-    transform: scale(1.02);
-}
+/*section tr:hover {*/
+/*    background-color: #f0f8ff;*/
+/*    transform: scale(1.02);*/
+/*}*/
 
 /* image style*/
-section td img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-}
+/*section td img {*/
+/*    border-radius: 50%;*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*}*/
 
 
-/*!* appointment button *!*/
+/*/* appointment button */
 /* td a {*/
 /*    display: inline-block;*/
 /*    margin-top: 10px;*/
@@ -100,37 +100,23 @@ section td img {
 /*    background-color: pink;*/
 /*}*/
 
-figcaption {
-    text-align: left;
-    font-size: 0.9em;
-    color: #666;
-}
+/*figcaption {*/
+/*    text-align: left;*/
+/*    font-size: 0.9em;*/
+/*    color: #666;*/
+/*}*/
 
-/*!* days higlight *!*/
+/*/* days higlight */
 /*section td:last-child {*/
 /*    background-color: #eaf7e9;*/
 /*    font-weight: bold;*/
 /*    text-align: center;*/
 /*}*/
 
-form label {
-    font-weight: bold;
-}
+/*form label {*/
+/*    font-weight: bold;*/
+/*}*/
 
-form input[type="text"]
-{
-    font-size: 0.8em;
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 1px;
-    transition: transform 0.3s ease-in-out;
-
-}
-form input[type="text"]:hover{
-    transform: scale(1.013);
-}
 
 /*form input[type="submit"] {*/
 /*    background-color: #00bfa5;*/
@@ -148,26 +134,14 @@ form input[type="text"]:hover{
 /*    background-color: #7f8c8d;*/
 /*}*/
 
-/* fieldset */
-fieldset {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-fieldset:hover {
-    background-color: lightgray;
-}
-
-legend {
-    font-size: 1.1em;
-    font-weight: bold;
-    color:darkslategray;
-}
-section label{
-    font-size: 0.9em;
-}
+/*legend {*/
+/*    font-size: 1.1em;*/
+/*    font-weight: bold;*/
+/*    color:darkslategray;*/
+/*}*/
+/*section label{*/
+/*    font-size: 0.9em;*/
+/*}*/
 
 /*section a {*/
 /*    display: inline-block;*/
@@ -184,6 +158,37 @@ section label{
 /*section a:hover {*/
 /*    background-color: pink;*/
 /*}*/
+
+
+
+
+
+form input[type="text"]
+{
+    font-size: 0.8em;
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    transition: transform 0.3s ease-in-out;
+
+}
+form input[type="text"]:hover{
+    transform: scale(1.013);
+}
+
+/* fieldset */
+fieldset {
+    /*border: 1px solid #ccc;*/
+    /*padding: 10px;*/
+    /*margin-bottom: 20px;*/
+    /*border-radius: 8px;*/
+    transition: background-color 0.3s ease;
+}
+fieldset:hover {
+    background-color: lightgray;
+}
 
 
 section ul {
@@ -216,6 +221,14 @@ section ul li:nth-child(11) { animation-delay: 2.2s; }
     }
 }
 
+.card {
+
+    transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+}
+
+.card:hover {
+    transform: scale(1.03); /* Zoom in effect */
+}
 
 
 

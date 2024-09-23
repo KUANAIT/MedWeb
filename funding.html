@@ -11,7 +11,7 @@
 </head>
 
 <header class="text-center text-light py-3" style="background-color: #19585a;">
-    <h1>Densauluq - Discounts and Appointments</h1>
+    <h1>Discounts and Appointments</h1>
     <p>Please select whether you are eligible for special discounts or need to schedule a regular appointment.</p>
 </header>
 
@@ -46,7 +46,8 @@
 </nav>
 
 
-<section>
+   <div class="container ml-1 my-4" >
+       <section>
     <h2>Select Your Appointment Type</h2>
 
     <form action="process-discount.html" method="get">
@@ -61,43 +62,51 @@
 
         <a type="button" class="btn btn-outline-success btn-sm " href="appointment.html">Next</a>
     </form>
-</section>
+       </section>
+   </div>
 
-<section>
+
+<section class="container ml-1">
     <h3>Available Discounts</h3>
     <ul>
-        <li><strong>People with disabilities:</strong> Receive free medical consultations and discounted treatments.</li>
-        <li><strong>Senior citizens:</strong> Receive discounts on selected services and priority appointment scheduling.</li>
-        <li><strong>Large families:</strong> Families with 3 or more children qualify for free basic medical services.</li>
+        <li href="#" class="list-group-item list-group-item-action"><strong>People with disabilities:</strong> Receive free medical consultations and discounted treatments.</li>
+        <li href="#" class="list-group-item list-group-item-action"><strong>Senior citizens:</strong> Receive discounts on selected services and priority appointment scheduling.</li>
+        <li href="#" class="list-group-item list-group-item-action"><strong>Large families:</strong> Families with 3 or more children qualify for free basic medical services.</li>
     </ul>
 </section>
-<section>
+<section class="container ml-1 mb-4">
     <h2>Payment Information</h2>
     <form action="process-payment.html" method="post">
-        <fieldset>
-            <legend>Credit Card Details</legend>
+        <fieldset class="border p-4 rounded">
+            <legend class="w-auto px-2">Credit Card Details</legend>
 
-            <label for="card-number">Card Number:</label>
-            <input type="text" id="card-number" name="card-number" placeholder="0000 0000 0000 0000" required>
-            <br><br>
+            <div class="form-group">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" class="form-control" placeholder="0000 0000 0000 0000" required>
+            </div>
 
-            <label for="card-name">Cardholder Name:</label>
-            <input type="text" id="card-name" name="card-name" placeholder="John Wick"required>
-            <br><br>
+            <div class="form-group">
+                <label for="card-name">Cardholder Name:</label>
+                <input type="text" id="card-name" name="card-name" class="form-control" placeholder="John Wick" required>
+            </div>
 
-            <label for="expiry-date">Expiry Date:</label>
-            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
-            <br><br>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="text" id="expiry-date" name="expiry-date" class="form-control" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" class="form-control" placeholder="***" required>
+                </div>
+            </div>
 
-            <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" name="cvv" placeholder="***"required>
-            <br><br>
+            <div class="form-group">
+                <label for="billing-address">Billing Address:</label>
+                <input type="text" id="billing-address" name="billing-address" class="form-control" placeholder="Tokyo, Some Street 123" required>
+            </div>
 
-            <label for="billing-address">Billing Address:</label>
-            <input type="text" id="billing-address" name="billing-address" placeholder="Tokyo, Some Street 123"required>
-            <br><br>
-
-            <input type="button" class="btn btn-outline-danger btn-sm"  value="Submit Payment">
+            <button type="submit" class="btn btn-outline-danger btn-sm">Submit Payment</button>
         </fieldset>
     </form>
 </section>
