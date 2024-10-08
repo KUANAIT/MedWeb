@@ -69,12 +69,12 @@
             <td>Traumatology</td>
             <td>Broken hand</td>
         </tr>
-        <tr>
+        <tr class="hidden-row">
             <td>12.06.2020</td>
             <td>Coronavirus test</td>
             <td>Positive</td>
         </tr>
-        <tr>
+        <tr class="hidden-row">
             <td>05.07.2024</td>
             <td>Monkeypox test</td>
             <td>Positive</td>
@@ -87,5 +87,26 @@
 <footer class="bg-dark text-light text-center py-3 mt-auto">
     <p>2024 Densauluq. Gaziza Tanirbergen, Liana Smatulla, Kuanysh Aitzhanov.</p>
 </footer>
+
+<script>
+    const hiddenRows = document.querySelectorAll('.hidden-row');
+    let currentIndex = 0;
+
+    const dateInput = document.getElementById('visit-date');
+
+    dateInput.addEventListener('change', function() {
+        if (currentIndex < hiddenRows.length) {
+            hiddenRows[currentIndex].style.display = 'table-row';
+            currentIndex++;
+        } else {
+            alert("All rows are visible!");
+        }
+    });
+
+    hiddenRows.forEach(row => {
+        row.style.display = 'none';
+    });
+</script>
+
 </body>
 </html>
