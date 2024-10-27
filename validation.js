@@ -1,46 +1,61 @@
-function checkAuthentication() {
-    if (localStorage.getItem('isAuthenticated') !== 'true') {
-        window.location.href = 'personal_account.html';
-    }
+
+function getUsers() {
+    const users = localStorage.getItem("users");
+    return users ? JSON.parse(users) : [];
 }
 
-document.getElementById('registerForm')?.addEventListener('submit', function(event) {
+
+function saveUsers(users) {
+    localStorage.setItem("users", JSON.stringify(users));
+}
+
+
+document.getElementById("registerForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const firstName = document.getElementById('first-name').value;
-    const lastName = document.getElementById('last-name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const firstName = document.getElementById("first-name").value;
+    const lastName = document.getElementById("last-name").value;
+    const email = document.getElementById("email-register").value;
+    const dob = document.getElementById("dob").value;
+    const password = document.getElementById("password-signup").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
 
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const existingUser = users.find(user => user.email === email);
-
-    if (existingUser) {
-        alert("This email is already registered. Please log in.");
-    } else {
-        users.push({ firstName, lastName, email, password });
-        localStorage.setItem('users', JSON.stringify(users));
-        alert("Registration successful! Please log in.");
-        window.location.href = 'login.html';
+    if (password !== confirmPassword) {
+        alert("Пароли не совпадают");
+        return;
     }
+
+    const users = getUsers();
+
+
+    if (users.some(user => user.email === email)) {
+        alert("Пользователь с таким email уже существует");
+        return;
+    }
+
+    const newUser = { firstName, lastName, email, dob, password };
+    users.push(newUser);
+    saveUsers(users);
+
+    alert("Регистрация успешна! Теперь войдите в свой аккаунт.");
+    window.location.href = "personal_account.html"; // Переход на страницу аккаунта
 });
 
-document.getElementById('loginForm')?.addEventListener('submit', function(event) {
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById("email-login").value;
+    const password = document.getElementById("password-login").value;
 
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const users = getUsers();
+
     const user = users.find(user => user.email === email && user.password === password);
 
     if (user) {
-        localStorage.setItem('isAuthenticated', 'true');
-        alert("Login successful!");
-        window.location.href = 'personal_account.html';
+        alert("Успешный вход!");
+        window.location.href = "personal_account.html"; // Переход на страницу аккаунта
     } else {
-        alert("Invalid email or password.");
+        alert("Неверный email или пароль");
     }
 });
-
-
