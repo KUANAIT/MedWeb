@@ -1,42 +1,46 @@
-// Массив для хранения данных пользователей
+
 let users = [
-    { id: 1, name: "Иван Иванов", email: "ivan@example.com" },
-    { id: 2, name: "Анна Смирнова", email: "anna@example.com" }
+    { id: 1, firstName: "Иван", lastName: "Иванов", dateOfBirth: "1990-01-01", status: "admin", email: "ivan@example.com", password: "12345" },
+    { id: 2, firstName: "Анна", lastName: "Смирнова", dateOfBirth: "1992-02-02", status: "", email: "anna@example.com", password: "54321" }
 ];
 
-// Функция для открытия админ-панели
+function checkStatusAndOpenPanel() {
+    const currentUser = users.find(user => users.status === "admin");
+    if (currentUser && currentUser.status === "admin") {
+        openAdminPanel();
+    } else {
+        alert("У вас нет доступа к админ-панели");
+    }
+}
+
 function openAdminPanel() {
-    // Создаём контейнер панели
     const panel = document.createElement("div");
     panel.id = "adminPanel";
-    panel.style.position = "fixed";
-    panel.style.top = "50%";
-    panel.style.left = "50%";
-    panel.style.transform = "translate(-50%, -50%)";
-    panel.style.width = "400px";
-    panel.style.backgroundColor = "#f8f9fa";
-    panel.style.border = "1px solid #ccc";
-    panel.style.borderRadius = "8px";
-    panel.style.padding = "20px";
-    panel.style.zIndex = "1000";
-
-    // Заголовок панели
+    panel.style = `
+        position: fixed; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px; background-color: #f8f9fa;
+        border: 1px solid #ccc; border-radius: 8px;
+        padding: 20px; z-index: 1000;
+    `;
     const title = document.createElement("h3");
     title.innerText = "Админ-панель управления пользователями";
     panel.appendChild(title);
 
-    // Список пользователей
     const userList = document.createElement("ul");
     userList.id = "userList";
     renderUserList(userList);
     panel.appendChild(userList);
 
-    // Форма для добавления нового пользователя
     const addUserForm = document.createElement("form");
     addUserForm.innerHTML = `
-        <h4>Добавить пользователя</h4>
-        <input type="text" id="nameInput" placeholder="Имя" required><br>
+        <h4>Add new user</h4>
+        <input type="text" id="firstNameInput" placeholder="Имя" required><br>
+        <input type="text" id="lastNameInput" placeholder="Фамилия" required><br>
+        <input type="date" id="dobInput" required><br>
+        <input type="text" id="statusInput" placeholder="Статус" required><br>
         <input type="email" id="emailInput" placeholder="Email" required><br>
+        <input type="password" id="passwordInput" placeholder="Пароль" required><br>
         <button type="submit">Добавить</button>
     `;
     addUserForm.onsubmit = (e) => {
@@ -46,7 +50,6 @@ function openAdminPanel() {
     };
     panel.appendChild(addUserForm);
 
-    // Кнопка закрытия панели
     const closeButton = document.createElement("button");
     closeButton.innerText = "Закрыть";
     closeButton.onclick = () => document.body.removeChild(panel);
@@ -55,20 +58,17 @@ function openAdminPanel() {
     document.body.appendChild(panel);
 }
 
-// Функция для отображения списка пользователей
 function renderUserList(userList) {
     userList.innerHTML = ""; // Очищаем список
     users.forEach((user) => {
         const userItem = document.createElement("li");
-        userItem.innerText = `${user.name} - ${user.email} `;
+        userItem.innerText = `${user.firstName} ${user.lastName}, ${user.dateOfBirth}, ${user.status} - ${user.email} `;
 
-        // Кнопка для редактирования
         const editButton = document.createElement("button");
         editButton.innerText = "Редактировать";
         editButton.onclick = () => editUser(user.id);
         userItem.appendChild(editButton);
 
-        // Кнопка для удаления
         const deleteButton = document.createElement("button");
         deleteButton.innerText = "Удалить";
         deleteButton.onclick = () => {
@@ -81,36 +81,55 @@ function renderUserList(userList) {
     });
 }
 
-// Функция для добавления нового пользователя
 function addUser() {
-    const name = document.getElementById("nameInput").value;
+    const firstName = document.getElementById("firstNameInput").value;
+    const lastName = document.getElementById("lastNameInput").value;
+    const dateOfBirth = document.getElementById("dobInput").value;
+    const status = document.getElementById("statusInput").value;
     const email = document.getElementById("emailInput").value;
-    if (name && email) {
-        users.push({ id: Date.now(), name, email });
-        document.getElementById("nameInput").value = "";
+    const password = document.getElementById("passwordInput").value;
+
+    if (firstName && lastName && dateOfBirth && email && password) {
+        users.push({
+            id: Date.now(),
+            firstName,
+            lastName,
+            dateOfBirth,
+            status,
+            email,
+            password
+        });
+
+        document.getElementById("firstNameInput").value = "";
+        document.getElementById("lastNameInput").value = "";
+        document.getElementById("dobInput").value = "";
+        document.getElementById("statusInput").value = "";
         document.getElementById("emailInput").value = "";
+        document.getElementById("passwordInput").value = "";
     }
 }
 
-// Функция для редактирования пользователя
+
 function editUser(id) {
     const user = users.find((u) => u.id === id);
     if (user) {
-        const newName = prompt("Введите новое имя", user.name);
-        const newEmail = prompt("Введите новый email", user.email);
-        if (newName) user.name = newName;
-        if (newEmail) user.email = newEmail;
+        user.firstName = prompt("Введите новое имя", user.firstName) || user.firstName;
+        user.lastName = prompt("Введите новую фамилию", user.lastName) || user.lastName;
+        user.dateOfBirth = prompt("Введите новую дату рождения", user.dateOfBirth) || user.dateOfBirth;
+        user.status = prompt("Введите новый статус", user.status) || user.status;
+        user.email = prompt("Введите новый email", user.email) || user.email;
+        user.password = prompt("Введите новый пароль", user.password) || user.password;
+
         renderUserList(document.getElementById("userList"));
     }
 }
 
-// Функция для удаления пользователя
+
 function deleteUser(id) {
     users = users.filter((user) => user.id !== id);
 }
 
-// Кнопка для открытия админ-панели
 const openButton = document.createElement("button");
 openButton.innerText = "Открыть админ-панель";
-openButton.onclick = openAdminPanel;
+openButton.onclick = checkStatusAndOpenPanel;
 document.body.appendChild(openButton);
