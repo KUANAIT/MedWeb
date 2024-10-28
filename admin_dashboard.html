@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .content {
+      margin: 20px 0;
+      padding: 20px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .btn-logout {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #d9534f;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Admin Dashboard</h1>
+</header>
+<div class="container">
+  <div class="content">
+    <h2>Welcome, Admin!</h2>
+    <p>This is your admin dashboard. Here, you can manage users and oversee system settings.</p>
+
+    <h3>User Management</h3>
+    <p>Manage user accounts below. (This section can be expanded with actual functionality.)</p>
+    <!-- Future functionality: Load user data, create buttons for editing/deleting users, etc. -->
+
+    <a class="btn-logout" onclick="logout()">Logout</a>
+  </div>
+</div>
+
+<script>
+  // Redirect if the user is not an admin
+  if (localStorage.getItem("isAdmin") !== "true") {
+    alert("Access denied. You are not an administrator.");
+    window.location.href = "login.html"; // Redirect non-admins to login
+  }
+
+  // Logout function
+  function logout() {
+    localStorage.removeItem("currentUserEmail");
+    localStorage.removeItem("isAdmin"); // Remove admin flag on logout
+    window.location.href = "login.html";
+  }
+</script>
+</body>
+</html>
