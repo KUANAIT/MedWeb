@@ -12,16 +12,25 @@ const currentUser = {
 
 
 function populateUserData() {
-    document.getElementById("userWelcome").textContent = `Welcome, ${currentUser.firstName}`;
-    document.getElementById("userName").textContent = currentUser.firstName;
-    document.getElementById("userSurname").textContent = currentUser.lastName;
-    document.getElementById("userIIN").textContent = currentUser.iin;
-    document.getElementById("userGender").textContent = currentUser.gender;
-    document.getElementById("userResidence").textContent = currentUser.residence;
-    document.getElementById("userHospital").textContent = currentUser.hospital;
-    document.getElementById("userDOB").textContent = currentUser.dob;
-    document.getElementById("userEmail").textContent = currentUser.email;
-    document.getElementById("userPhone").textContent = currentUser.phone;
+    const users = getUsers();
+    const currentUserEmail = localStorage.getItem("currentUserEmail");
+
+    const currentUser = users.find(user => user.email === currentUserEmail);
+
+    if (currentUser) {
+        document.getElementById("userWelcome").textContent = `Welcome, ${currentUser.firstName}`;
+        document.getElementById("userName").textContent = currentUser.firstName;
+        document.getElementById("userSurname").textContent = currentUser.lastName;
+        document.getElementById("userIIN").textContent = currentUser.iin || "Not provided";
+        document.getElementById("userGender").textContent = currentUser.gender || "Not provided";
+        document.getElementById("userResidence").textContent = currentUser.residence || "Not provided";
+        document.getElementById("userHospital").textContent = currentUser.hospital || "Not provided";
+        document.getElementById("userDOB").textContent = currentUser.dob;
+        document.getElementById("userEmail").textContent = currentUser.email;
+        document.getElementById("userPhone").textContent = currentUser.phone || "Not provided";
+    }
 }
 
 window.onload = populateUserData;
+
+
