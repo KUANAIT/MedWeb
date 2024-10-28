@@ -212,7 +212,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function showModal(message) {
-        // Create the modal container
         const modal = document.createElement("div");
         modal.style.position = "fixed";
         modal.style.top = "0";
@@ -225,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.alignItems = "center";
         modal.style.zIndex = "1000";
 
-        // Create the modal content
+
         const modalContent = document.createElement("div");
         modalContent.style.backgroundColor = "#fff";
         modalContent.style.padding = "20px";
@@ -233,12 +232,12 @@ document.addEventListener("DOMContentLoaded", function () {
         modalContent.style.width = "300px";
         modalContent.style.textAlign = "center";
 
-        // Add message text
+
         const messageText = document.createElement("p");
         messageText.innerText = message;
         modalContent.appendChild(messageText);
 
-        // Add a close button
+
         const closeButton = document.createElement("button");
         closeButton.innerText = "Close";
         closeButton.style.marginTop = "10px";
