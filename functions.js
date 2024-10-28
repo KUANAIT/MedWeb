@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     backToTopButton.style.right = "20px";
     backToTopButton.style.padding = "10px 20px";
     backToTopButton.style.fontSize = "16px";
-    backToTopButton.style.display = "none"; // Hidden initially
+    backToTopButton.style.display = "none";
     backToTopButton.style.cursor = "pointer";
     backToTopButton.style.backgroundColor = "#19585a";
     backToTopButton.style.color = "#fff";
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function renderReviews(doctorName, reviewsContainer) {
         const reviews = doctorReviews[doctorName] || [];
 
-        reviewsContainer.innerHTML = ''; // Clear existing reviews
+        reviewsContainer.innerHTML = '';
 
         const averageRating = reviews.length
             ? (reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length).toFixed(1)
