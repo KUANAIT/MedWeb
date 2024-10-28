@@ -1,7 +1,9 @@
 
 let users = [
-    { id: 1, firstName: "Иван", lastName: "Иванов", dateOfBirth: "1990-01-01", status: "admin", email: "ivan@example.com", password: "12345" },
-    { id: 2, firstName: "Анна", lastName: "Смирнова", dateOfBirth: "1992-02-02", status: "", email: "anna@example.com", password: "54321" }
+    { id: 1, firstName: "Kuanysh", lastName: "Aitzhanov", dateOfBirth: "2005-12-22", status: "admin", email: "kuanysh.a@densaulyq.kz", password: "12345" },
+    { id: 2, firstName: "Liana", lastName: "Smatulla", dateOfBirth: "2005-07-12", status: "admin", email: "liana.s@densaulyq.kz", password: "54321" },
+    { id: 3, firstName: "Gaziza", lastName: "Tanirbergen", dateOfBirth: "2004-05-22", status: "admin", email: "gaziza.t@densaulyq.kz", password: "22054" },
+
 ];
 
 function checkStatusAndOpenPanel() {
@@ -113,12 +115,12 @@ function addUser() {
 function editUser(id) {
     const user = users.find((u) => u.id === id);
     if (user) {
-        user.firstName = prompt("Введите новое имя", user.firstName) || user.firstName;
-        user.lastName = prompt("Введите новую фамилию", user.lastName) || user.lastName;
-        user.dateOfBirth = prompt("Введите новую дату рождения", user.dateOfBirth) || user.dateOfBirth;
-        user.status = prompt("Введите новый статус", user.status) || user.status;
-        user.email = prompt("Введите новый email", user.email) || user.email;
-        user.password = prompt("Введите новый пароль", user.password) || user.password;
+        user.firstName = prompt("Your new name", user.firstName) || user.firstName;
+        user.lastName = prompt("Your new surname", user.lastName) || user.lastName;
+        user.dateOfBirth = prompt("Your date of birth", user.dateOfBirth) || user.dateOfBirth;
+        user.status = prompt("Your status", user.status) || user.status;
+        user.email = prompt("Your new email", user.email) || user.email;
+        user.password = prompt("Your new password", user.password) || user.password;
 
         renderUserList(document.getElementById("userList"));
     }

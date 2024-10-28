@@ -16,7 +16,7 @@
 
 <header class="text-center text-light py-4" style="background-color: #19585a;">
   <h1>Personal Account</h1>
-  <h2>Welcome, Kuanysh</h2>
+  <h2 id="userWelcome">Welcome</h2>
   <p class="description">Manage your personal information, appointments, and more.</p>
 </header>
 
@@ -49,25 +49,26 @@
   </ul>
 </nav>
 
-<<div class="container my-4">
+
+<div class="container my-4">
   <section>
     <h2>Your Information</h2>
     <div class="row mb-3">
       <div class="col-md-6">
         <div class="card p-3 shadow">
-          <p><strong>Name:</strong> Kuanysh</p>
-          <p><strong>Surname:</strong> Aitzhanov</p>
-          <p><strong>IIN:</strong> 22222222222222</p>
-          <p><strong>Gender:</strong> Male</p>
+          <p><strong>Name:</strong> <span id="userName"></span></p>
+          <p><strong>Surname:</strong> <span id="userSurname"></span></p>
+          <p><strong>IIN:</strong> <span id="userIIN"></span></p>
+          <p><strong>Gender:</strong> <span id="userGender"></span></p>
         </div>
       </div>
       <div class="col-md-6">
         <div class="card p-3 shadow">
-          <p><strong>Place of Residence:</strong> Pushkin st. 12</p>
-          <p><strong>Hospital Registration:</strong> Mediker</p>
-          <p><strong>Date of Birth:</strong> 22.12.2005</p>
-          <p><strong>Email:</strong> kuka@gmail.com</p>
-          <p><strong>Phone:</strong> +7 (777) 789 7890</p>
+          <p><strong>Place of Residence:</strong> <span id="userResidence"></span></p>
+          <p><strong>Hospital Registration:</strong> <span id="userHospital"></span></p>
+          <p><strong>Date of Birth:</strong> <span id="userDOB"></span></p>
+          <p><strong>Email:</strong> <span id="userEmail"></span></p>
+          <p><strong>Phone:</strong> <span id="userPhone"></span></p>
         </div>
       </div>
     </div>
@@ -75,38 +76,12 @@
 </div>
 
 
-<section class="mt-4 ms-3 me-3 mb-4">
-  <div class="card shadow">
-    <div class="card-body">
-      <h2>Your Appointments</h2>
-      <p>No upcoming appointments.</p>
-      <p><a href="appointment.html" class="btn btn-primary">Schedule a new appointment</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="mt-4 ms-3 me-3 mb-4">
-  <div class="card shadow">
-    <div class="card-body">
-      <h2>Your Test Results</h2>
-      <p>No test results available.</p>
-      <p><a href="analysis.html" class="btn btn-primary">View more details</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="mt-4 ms-3 me-3 mb-4">
-  <div class="card shadow">
-    <div class="card-body">
-      <h2>Contact Your Doctor</h2>
-      <p><strong>Doctor's Name:</strong> Dr. Aibolit</p>
-      <p><strong>Email:</strong> doctor@gmail.com</p>
-      <p><strong>Phone:</strong> +7 (777) 456 4567</p>
-    </div>
-  </div>
-</section>
+<script src="user.js"></script>
 <script src="adminPanel.js"></script>
 
+<footer class="bg-dark text-light text-center py-3 mt-auto">
+  <p>2024 Densauluq. Gaziza Tanirbergen, Liana Smatulla, Kuanysh Aitzhanov.</p>
+</footer>
 </body>
 
 </html>
