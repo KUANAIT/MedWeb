@@ -203,15 +203,21 @@ h3 {
     color:#19585a;
 }
 
-body {
+body, .card{
     background-color: #ffffff;
     color: #000000;
     transition: background-color 0.5s, color 0.5s;
 }
 
-body.dark-mode {
+
+body.dark-mode{
     background-color: #2c2c2c;
-    color: #f0f0f0;
+    color: white;
+}
+
+body.dark-mode .card{
+    background-color: darkslategray;
+    color: white;
 }
 
 #theme-toggle {
@@ -264,26 +270,15 @@ body.dark-mode h3{
     color: #4ec1c7;
 }
 
-h2 {
+
+* {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 
-h2.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h3 {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-
-h3.visible {
+*.visible {
     opacity: 1;
     transform: translateY(0);
 }

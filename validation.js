@@ -1,9 +1,3 @@
-let users = [
-    { id: 1, firstName: "Kuanysh", lastName: "Aitzhanov", dateOfBirth: "2005-12-22", status: "admin", email: "kuanysh.a@densaulyq.kz", password: "12345" },
-    { id: 2, firstName: "Liana", lastName: "Smatulla", dateOfBirth: "2005-07-12", status: "admin", email: "liana.s@densaulyq.kz", password: "54321" },
-    { id: 3, firstName: "Gaziza", lastName: "Tanirbergen", dateOfBirth: "2004-05-22", status: "admin", email: "gaziza.t@densaulyq.kz", password: "22054" },
-
-];
 
 function getUsers() {
     const users = localStorage.getItem("users");
@@ -44,7 +38,7 @@ document.getElementById("registerForm").addEventListener("submit", function(even
     saveUsers(users);
 
     alert("Регистрация успешна! Теперь войдите в свой аккаунт.");
-    window.location.href = "personal_account.html";
+    window.location.href = "personal_account.html"; // Переход на страницу аккаунта
 });
 
 
@@ -60,7 +54,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     if (user) {
         alert("Успешный вход!");
-        window.location.href = "personal_account.html";
+        window.location.href = "personal_account.html"; // Переход на страницу аккаунта
     } else {
         alert("Неверный email или пароль");
     }
