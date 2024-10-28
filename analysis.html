@@ -59,6 +59,10 @@
     </div>
 </div>
 
+<div class="container mb-4">
+    <input type="text" id="search-input" class="form-control" placeholder="Search Analysis..." />
+</div>
+
 <section class="analysis">
     <table class="table table-striped table-hover" id="table-design">
         <thead class="table-dark" id="thead-design-analysis">
@@ -68,18 +72,18 @@
             <th>Results</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="analysis-table">
         <tr>
             <td>11.09.2001</td>
             <td>Traumatology</td>
             <td>Broken hand</td>
         </tr>
-        <tr class="hidden-row">
+        <tr>
             <td>12.06.2020</td>
             <td>Coronavirus test</td>
             <td>Positive</td>
         </tr>
-        <tr class="hidden-row">
+        <tr>
             <td>05.07.2024</td>
             <td>Monkeypox test</td>
             <td>Positive</td>
@@ -94,10 +98,9 @@
 </footer>
 
 <script>
-    // JavaScript для фильтрации данных в реальном времени
     document.getElementById('search-input').addEventListener('input', function() {
         const filter = this.value.toLowerCase();
-        const rows = document.querySelectorAll('#analysis-table tbody tr');
+        const rows = document.querySelectorAll('#analysis-table tr');
 
         rows.forEach(row => {
             const text = row.textContent.toLowerCase();
