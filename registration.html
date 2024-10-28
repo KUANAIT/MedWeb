@@ -102,8 +102,13 @@
     <p>2024 Densaulyq. Gaziza Tanirbergen, Liana Smatulla, Kuanysh Aitzhanov.</p>
 </footer>
 
-<script src="validation.js"></script>
-<script src="loginForm.js"></script>
+<script>
+    if (localStorage.getItem("isAdmin") === "true") {
+        window.location.href = "admin_dashboard.html";
+    } else if (localStorage.getItem("currentUserEmail")) {
+        window.location.href = "personal_account.html";
+    }
+</script>
 
 </body>
 </html>

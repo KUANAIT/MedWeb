@@ -7,7 +7,7 @@ function isInViewport(element) {
 }
 
 function animateOnScroll() {
-    const elements = document.querySelectorAll('h1, h2, h3, a, p');
+    const elements = document.querySelectorAll('h1, h2, h3, a, img');
     elements.forEach((element) => {
         if (isInViewport(element)) {
             element.classList.add('visible');
