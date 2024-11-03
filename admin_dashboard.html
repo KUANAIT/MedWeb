@@ -32,6 +32,32 @@
     h1, h2 {
       color: #333;
     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .btn-edit, .btn-remove, .btn-add {
+      padding: 5px 10px;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-edit {
+      background-color: #5bc0de;
+    }
+    .btn-remove {
+      background-color: #d9534f;
+    }
     .btn-logout {
       display: inline-block;
       padding: 10px 20px;
@@ -42,6 +68,15 @@
       border-radius: 5px;
       cursor: pointer;
       text-decoration: none;
+    }
+    .user-form {
+      margin-bottom: 20px;
+    }
+    input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+      padding: 10px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
   </style>
 </head>
@@ -54,27 +89,122 @@
     <h2>Welcome, Admin!</h2>
     <p>This is your admin dashboard. Here, you can manage users and oversee system settings.</p>
 
+    <h3>Add New User</h3>
+    <div class="user-form">
+      <input type="text" id="newFirstName" placeholder="First Name" required>
+      <input type="text" id="newLastName" placeholder="Last Name" required>
+      <input type="email" id="newEmail" placeholder="Email" required>
+      <input type="text" id="newRole" placeholder="Role" required>
+      <button class="btn-add" onclick="addUser()">Add User</button>
+    </div>
+
     <h3>User Management</h3>
-    <p>Manage user accounts below. (This section can be expanded with actual functionality.)</p>
-    <!-- Future functionality: Load user data, create buttons for editing/deleting users, etc. -->
+    <p>Manage user accounts below:</p>
+
+    <table>
+      <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody id="userTable">
+      <!-- User data will be populated here -->
+      </tbody>
+    </table>
 
     <a class="btn-logout" onclick="logout()">Logout</a>
   </div>
 </div>
 
 <script>
-  // Redirect if the user is not an admin
-  if (localStorage.getItem("isAdmin") !== "true") {
-    alert("Access denied. You are not an administrator.");
-    window.location.href = "login.html"; // Redirect non-admins to login
+  function getUsers() {
+    const users = localStorage.getItem("users");
+    return users ? JSON.parse(users) : [];
   }
 
-  // Logout function
+  function saveUsers(users) {
+    localStorage.setItem("users", JSON.stringify(users));
+  }
+
+  function loadUsers() {
+    const users = getUsers();
+    const userTable = document.getElementById('userTable');
+    userTable.innerHTML = '';
+
+    users.forEach((user, index) => {
+      const row = `
+        <tr>
+          <td>${user.firstName}</td>
+          <td>${user.lastName}</td>
+          <td>${user.email}</td>
+          <td>${user.role}</td>
+          <td>
+            <button class="btn-edit" onclick="editUser(${index})">Edit</button>
+            <button class="btn-remove" onclick="removeUser(${index})">Remove</button>
+          </td>
+        </tr>
+      `;
+      userTable.innerHTML += row;
+    });
+  }
+
+  function addUser() {
+    const firstName = document.getElementById('newFirstName').value;
+    const lastName = document.getElementById('newLastName').value;
+    const email = document.getElementById('newEmail').value;
+    const role = document.getElementById('newRole').value;
+
+    const users = getUsers();
+
+    if (users.some(user => user.email === email)) {
+      alert("User with this email already exists.");
+      return;
+    }
+
+    const newUser = { firstName, lastName, email, role };
+    users.push(newUser);
+    saveUsers(users);
+    loadUsers();
+    clearForm();
+  }
+
+  function removeUser(index) {
+    const users = getUsers();
+    users.splice(index, 1);
+    saveUsers(users);
+    loadUsers();
+  }
+
+  function editUser(index) {
+    const users = getUsers();
+    const user = users[index];
+    const newRole = prompt(`Edit role for ${user.firstName} ${user.lastName} (current role: ${user.role}):`, user.role);
+    if (newRole) {
+      user.role = newRole;
+      saveUsers(users);
+      loadUsers();
+    }
+  }
+
+  function clearForm() {
+    document.getElementById('newFirstName').value = '';
+    document.getElementById('newLastName').value = '';
+    document.getElementById('newEmail').value = '';
+    document.getElementById('newRole').value = '';
+  }
+
   function logout() {
     localStorage.removeItem("currentUserEmail");
-    localStorage.removeItem("isAdmin"); // Remove admin flag on logout
+    localStorage.removeItem("isAdmin");
     window.location.href = "login.html";
   }
+
+  window.onload = loadUsers;
 </script>
 </body>
 </html>
+
