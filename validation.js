@@ -1,60 +1,107 @@
-function getUsers() {
-    const users = localStorage.getItem("users");
-    return users ? JSON.parse(users) : [];
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const firstNameInput = document.getElementById("first-name");
+    const lastNameInput = document.getElementById("last-name");
+    const emailInput = document.getElementById("email-register");
+    const passwordInput = document.getElementById("password-signup");
+    const confirmPasswordInput = document.getElementById("confirm-password");
+    const registerForm = document.getElementById("registerForm"); // Add this line to select the form
 
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/;
 
-function saveUsers(users) {
-    localStorage.setItem("users", JSON.stringify(users));
-}
+    // Create error message elements
+    const createErrorMessage = (input) => {
+        const errorMessage = document.createElement("div");
+        errorMessage.classList.add("error-message");
+        errorMessage.style.color = "red";
+        input.parentNode.insertBefore(errorMessage, input.nextSibling);
+        return errorMessage;
+    };
 
+    const firstNameError = createErrorMessage(firstNameInput);
+    const lastNameError = createErrorMessage(lastNameInput);
+    const emailError = createErrorMessage(emailInput);
+    const passwordError = createErrorMessage(passwordInput);
+    const confirmPasswordError = createErrorMessage(confirmPasswordInput);
 
-document.getElementById("registerForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+    // Validation for input fields
+    const validateFields = () => {
+        let isValid = true; // Initialize isValid as true
 
-    const firstName = document.getElementById("first-name").value;
-    const lastName = document.getElementById("last-name").value;
-    const email = document.getElementById("email-register").value;
-    const dob = document.getElementById("dob").value;
-    const password = document.getElementById("password-signup").value;
-    const confirmPassword = document.getElementById("confirm-password").value;
+        if (firstNameInput.value.length < 3) {
+            firstNameError.textContent = "First name must be at least 3 characters long.";
+            isValid = false; // Set isValid to false if there's an error
+        } else {
+            firstNameError.textContent = "";
+        }
 
-    if (password !== confirmPassword) {
-        alert("Пароли не совпадают");
-        return;
-    }
+        if (lastNameInput.value.length < 3) {
+            lastNameError.textContent = "Last name must be at least 3 characters long.";
+            isValid = false;
+        } else {
+            lastNameError.textContent = "";
+        }
 
-    const users = getUsers();
+        if (!emailInput.value.includes("@") || !emailInput.value.includes(".")) {
+            emailError.textContent = "Please enter a valid email address.";
+            isValid = false;
+        } else {
+            emailError.textContent = "";
+        }
 
+        if (!passwordRegex.test(passwordInput.value)) {
+            passwordError.textContent = "Password must be 8-15 characters long and include at least one uppercase letter, one digit, and one special character.";
+            isValid = false;
+        } else {
+            passwordError.textContent = "";
+        }
 
-    if (users.some(user => user.email === email)) {
-        alert("Пользователь с таким email уже существует");
-        return;
-    }
+        if (confirmPasswordInput.value !== passwordInput.value) {
+            confirmPasswordError.textContent = "Passwords do not match.";
+            isValid = false;
+        } else {
+            confirmPasswordError.textContent = "";
+        }
 
-    const newUser = { firstName, lastName, email, dob, password };
-    users.push(newUser);
-    saveUsers(users);
+        return isValid; // Return the validation result
+    };
 
-    alert("Регистрация успешна! Теперь войдите в свой аккаунт.");
-    window.location.href = "personal_account.html"; // Переход на страницу аккаунта
-});
+    // Validate on blur for each input
+    firstNameInput.addEventListener("blur", validateFields);
+    lastNameInput.addEventListener("blur", validateFields);
+    emailInput.addEventListener("blur", validateFields);
+    passwordInput.addEventListener("blur", validateFields);
+    confirmPasswordInput.addEventListener("blur", validateFields);
 
+    // Form submission event
+    registerForm.addEventListener("submit", (event) => {
+        if (!validateFields()) {
+            event.preventDefault(); // Prevent submission if validation fails
+            alert("Please correct the errors before submitting."); // Optional: alert user
+        } else {
+            // Here you can redirect to the personal page or process the form
+            alert("Registration successful! Redirecting to your personal page..."); // You can change this as needed
+            // window.location.href = "personal_page.html"; // Uncomment to redirect
+        }
+    });
 
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+    // Password visibility toggle
+    const togglePasswordVisibility = (passwordField, toggleButton) => {
+        toggleButton.addEventListener("click", () => {
+            const isPasswordVisible = passwordField.getAttribute("type") === "text";
+            passwordField.setAttribute("type", isPasswordVisible ? "password" : "text");
+            toggleButton.textContent = isPasswordVisible ? "👁️" : "👁️‍🗨️";
+        });
+    };
 
-    const email = document.getElementById("email-login").value;
-    const password = document.getElementById("password-login").value;
+    const passwordToggleBtn = document.createElement("span");
+    passwordToggleBtn.textContent = "👁️";
+    passwordToggleBtn.style.cursor = "pointer";
+    passwordInput.parentNode.appendChild(passwordToggleBtn);
+    togglePasswordVisibility(passwordInput, passwordToggleBtn);
 
-    const users = getUsers();
-
-    const user = users.find(user => user.email === email && user.password === password);
-
-    if (user) {
-        alert("Успешный вход!");
-        window.location.href = "personal_account.html"; // Переход на страницу аккаунта
-    } else {
-        alert("Неверный email или пароль");
-    }
+    const confirmPasswordToggleBtn = document.createElement("span");
+    confirmPasswordToggleBtn.textContent = "👁️";
+    confirmPasswordToggleBtn.style.cursor = "pointer";
+    confirmPasswordInput.parentNode.appendChild(confirmPasswordToggleBtn);
+    togglePasswordVisibility(confirmPasswordInput, confirmPasswordToggleBtn);
 });
