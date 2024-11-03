@@ -204,6 +204,19 @@
   }
 
   window.onload = loadUsers;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const firstName = localStorage.getItem("firstName");
+    const lastName = localStorage.getItem("lastName");
+    const email = localStorage.getItem("email");
+
+    if (firstName && lastName && email) {
+      const users = getUsers();
+      users.push({ firstName, lastName, email, role: "User" });
+      saveUsers(users);
+      loadUsers();
+    }
+  });
 </script>
 </body>
 </html>

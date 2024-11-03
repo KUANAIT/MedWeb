@@ -91,7 +91,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 email: emailInput.value,
                 password: passwordInput.value
             };
-
+            const newUser = {
+                firstName: firstNameInput.value,
+                lastName: lastNameInput.value,
+                email: emailInput.value,
+                role: "User"
+            };
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            users.push(newUser);
+            localStorage.setItem("users", JSON.stringify(users));
 
             localStorage.setItem(user.email, JSON.stringify(user));
 
