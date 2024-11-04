@@ -14,7 +14,6 @@ const currentUser = {
 function populateUserData() {
     const users = getUsers();
     const currentUserEmail = localStorage.getItem("currentUserEmail");
-
     const currentUser = users.find(user => user.email === currentUserEmail);
 
     if (currentUser) {

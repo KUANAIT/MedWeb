@@ -1,6 +1,5 @@
-
 let users = [
-    { id: 1, firstName: "Kuanysh", lastName: "Aitzhanov", email: "ivan@example.com", password: "123456" }
+    { id: 1, name: "Kuanysh", email: "ivan@example.com"}
 ];
 
 
@@ -51,20 +50,18 @@ function openAdminPanel() {
     document.body.appendChild(panel);
 }
 
-// Функция для отображения списка пользователей
+
 function renderUserList(userList) {
     userList.innerHTML = ""; // Очищаем список
     users.forEach((user) => {
         const userItem = document.createElement("li");
         userItem.innerText = `${user.name} - ${user.email} `;
 
-        // Кнопка для редактирования
         const editButton = document.createElement("button");
         editButton.innerText = "Редактировать";
         editButton.onclick = () => editUser(user.id);
         userItem.appendChild(editButton);
 
-        // Кнопка для удаления
         const deleteButton = document.createElement("button");
         deleteButton.innerText = "Удалить";
         deleteButton.onclick = () => {
@@ -78,10 +75,8 @@ function renderUserList(userList) {
 }
 
 function addUser() {
-    const firstName = document.getElementById("firstNameInput").value;
-    const lastName = document.getElementById("lastNameInput").value;
+    const name = document.getElementById("nameInput").value;
     const email = document.getElementById("emailInput").value;
-    const password = document.getElementById("passwordInput").value;
 
     if (name && email) {
         users.push({ id: Date.now(), name, email });
@@ -93,14 +88,9 @@ function addUser() {
 function editUser(id) {
     const user = users.find((u) => u.id === id);
     if (user) {
-        const newName = prompt("New name", user.firstName);
-        const newSurname = prompt("New name", user.lastName);
+        const newName = prompt("New name", user.name);
         const newEmail = prompt("New email", user.email);
-        const newPassword = prompt("New password", user.password);
-        if (newName) user.firstName = newName;
-        if (newEmail) user.email = newEmail;
-        if (newSurname) user.lastName = newSurname;
-        if (newPassword) user.email = newPassword;
+        if (name) user.name = newEmail;
         renderUserList(document.getElementById("userList"));
     }
 }
@@ -108,8 +98,3 @@ function editUser(id) {
 function deleteUser(id) {
     users = users.filter((user) => user.id !== id);
 }
-
-const openButton = document.createElement("button");
-openButton.innerText = "Open admin panel";
-openButton.onclick = openAdminPanel;
-document.body.appendChild(openButton);
